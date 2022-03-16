@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\luanl\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\luanl\\.nuget\\packages"
+      "C:\\Users\\suporte\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\suporte\\.nuget\\packages"
     ]
   }
 }

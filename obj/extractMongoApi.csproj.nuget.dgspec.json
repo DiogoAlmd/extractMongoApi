@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\luanl\\Documents\\visual studio codigos\\conectarMongo\\extractMongoApi.csproj": {}
+    "C:\\Users\\suporte\\Documents\\enrraba_Mongo\\extractMongoApi\\extractMongoApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\luanl\\Documents\\visual studio codigos\\conectarMongo\\extractMongoApi.csproj": {
+    "C:\\Users\\suporte\\Documents\\enrraba_Mongo\\extractMongoApi\\extractMongoApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\luanl\\Documents\\visual studio codigos\\conectarMongo\\extractMongoApi.csproj",
+        "projectUniqueName": "C:\\Users\\suporte\\Documents\\enrraba_Mongo\\extractMongoApi\\extractMongoApi.csproj",
         "projectName": "extractMongoApi",
-        "projectPath": "C:\\Users\\luanl\\Documents\\visual studio codigos\\conectarMongo\\extractMongoApi.csproj",
-        "packagesPath": "C:\\Users\\luanl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\luanl\\Documents\\visual studio codigos\\conectarMongo\\obj\\",
+        "projectPath": "C:\\Users\\suporte\\Documents\\enrraba_Mongo\\extractMongoApi\\extractMongoApi.csproj",
+        "packagesPath": "C:\\Users\\suporte\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\suporte\\Documents\\enrraba_Mongo\\extractMongoApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\luanl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\suporte\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -42,7 +42,11 @@
           "dependencies": {
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
-              "version": "[3.1.21, )"
+              "version": "[3.1.22, )"
+            },
+            "MongoDB.Bson": {
+              "target": "Package",
+              "version": "[2.15.0, )"
             },
             "MongoDB.Driver": {
               "target": "Package",
@@ -71,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -14,7 +14,7 @@
           "lib/netstandard2.1/DnsClient.dll": {}
         }
       },
-      "Microsoft.AspNetCore.JsonPatch/3.1.21": {
+      "Microsoft.AspNetCore.JsonPatch/3.1.22": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
@@ -27,10 +27,10 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.JsonPatch.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Mvc.NewtonsoftJson/3.1.21": {
+      "Microsoft.AspNetCore.Mvc.NewtonsoftJson/3.1.22": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.JsonPatch": "3.1.21",
+          "Microsoft.AspNetCore.JsonPatch": "3.1.22",
           "Newtonsoft.Json": "12.0.2",
           "Newtonsoft.Json.Bson": "1.0.2"
         },
@@ -309,10 +309,10 @@
         "lib/netstandard2.1/DnsClient.xml"
       ]
     },
-    "Microsoft.AspNetCore.JsonPatch/3.1.21": {
-      "sha512": "fiPVp+TsTiR60hQSniUvtvp4HjLfzoxgT5g3KX2xF1MLIGHNkdm/9+9faTUJn0Uqf0sZ95tCweJqZR6YXJBmRw==",
+    "Microsoft.AspNetCore.JsonPatch/3.1.22": {
+      "sha512": "bFPowEMekIgsoR1z4XVUsdiqg8fzx4YGDWSbuIsNyqWrvIQI33JbTabFtQilmoZTcG7V4qwmabxvb+w9mK1IUA==",
       "type": "package",
-      "path": "microsoft.aspnetcore.jsonpatch/3.1.21",
+      "path": "microsoft.aspnetcore.jsonpatch/3.1.22",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -320,14 +320,14 @@
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard2.0/Microsoft.AspNetCore.JsonPatch.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.JsonPatch.xml",
-        "microsoft.aspnetcore.jsonpatch.3.1.21.nupkg.sha512",
+        "microsoft.aspnetcore.jsonpatch.3.1.22.nupkg.sha512",
         "microsoft.aspnetcore.jsonpatch.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Mvc.NewtonsoftJson/3.1.21": {
-      "sha512": "mnOCXOCialUgQjxwHuxaUjgPuNQadz19aSZdMR0z9zQ979Qw0uvp2MoORHpi/stHRXs4508CM1z4QkRVRa7a5A==",
+    "Microsoft.AspNetCore.Mvc.NewtonsoftJson/3.1.22": {
+      "sha512": "f5R2RTZtP9YU0OGWmk62gV/NMTORCYEi5vIdRkfZxim6UHbSZMJWPXdI/zUfp3cuUkmZydjgDlv3A2bfXusICQ==",
       "type": "package",
-      "path": "microsoft.aspnetcore.mvc.newtonsoftjson/3.1.21",
+      "path": "microsoft.aspnetcore.mvc.newtonsoftjson/3.1.22",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -335,7 +335,7 @@
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netcoreapp3.1/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll",
         "lib/netcoreapp3.1/Microsoft.AspNetCore.Mvc.NewtonsoftJson.xml",
-        "microsoft.aspnetcore.mvc.newtonsoftjson.3.1.21.nupkg.sha512",
+        "microsoft.aspnetcore.mvc.newtonsoftjson.3.1.22.nupkg.sha512",
         "microsoft.aspnetcore.mvc.newtonsoftjson.nuspec"
       ]
     },
@@ -827,25 +827,26 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 3.1.21",
+      "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 3.1.22",
+      "MongoDB.Bson >= 2.15.0",
       "MongoDB.Driver >= 2.15.0",
       "Newtonsoft.Json >= 13.0.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\luanl\\.nuget\\packages\\": {}
+    "C:\\Users\\suporte\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\luanl\\Documents\\visual studio codigos\\conectarMongo\\extractMongoApi.csproj",
+      "projectUniqueName": "C:\\Users\\suporte\\Documents\\enrraba_Mongo\\extractMongoApi\\extractMongoApi.csproj",
       "projectName": "extractMongoApi",
-      "projectPath": "C:\\Users\\luanl\\Documents\\visual studio codigos\\conectarMongo\\extractMongoApi.csproj",
-      "packagesPath": "C:\\Users\\luanl\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\luanl\\Documents\\visual studio codigos\\conectarMongo\\obj\\",
+      "projectPath": "C:\\Users\\suporte\\Documents\\enrraba_Mongo\\extractMongoApi\\extractMongoApi.csproj",
+      "packagesPath": "C:\\Users\\suporte\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\suporte\\Documents\\enrraba_Mongo\\extractMongoApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\luanl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\suporte\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -873,7 +874,11 @@
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
             "target": "Package",
-            "version": "[3.1.21, )"
+            "version": "[3.1.22, )"
+          },
+          "MongoDB.Bson": {
+            "target": "Package",
+            "version": "[2.15.0, )"
           },
           "MongoDB.Driver": {
             "target": "Package",
@@ -902,7 +907,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,6 +1,8 @@
-﻿namespace conectarMongo.Models
+﻿
+
+namespace extractMongoApi.Models
 {
-    public class requestData
+    public class RequestData
     {
         public string filters { get; set; }
         public string fields { get; set; }
