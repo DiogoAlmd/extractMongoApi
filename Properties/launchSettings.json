@@ -4,7 +4,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:46471"
+      "applicationUrl": "http://localhost:7890"
       //"sslPort": 44369
     }
   },
@@ -21,7 +21,7 @@
       "commandName": "Project",
       "launchBrowser": false,
       "launchUrl": "api/extractMongoApi",
-      "applicationUrl": "http://localhost:44259",
+      "applicationUrl": "http://localhost:7891",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

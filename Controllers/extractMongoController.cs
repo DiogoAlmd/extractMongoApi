@@ -1,16 +1,25 @@
 ﻿using extractMongoApi.Models;
+using extractMongoApi.Properties;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Bson;
 using MongoDB.Bson.IO;
 using MongoDB.Driver;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
+using System.Threading.Tasks;
+
 
 namespace extractMongoApi.Controllers
 {
+    
     [Route("api/[controller]")]
     [ApiController]
     public class extractMongoController : ControllerBase
@@ -42,13 +51,9 @@ namespace extractMongoApi.Controllers
 
             //SORT
             if (config.sort == -1)
-            {
                 sortDefinition = Builders<BsonDocument>.Sort.Descending(config.sortParams);
-            }
             else
-            {
                 sortDefinition = Builders<BsonDocument>.Sort.Ascending(config.sortParams);
-            }
 
             //FILTERS
             FilterDefinition<BsonDocument> filter = createFilters(data.filters);
@@ -67,7 +72,21 @@ namespace extractMongoApi.Controllers
             {
                 documents = collection.Aggregate().Match(filter).Sort(sortDefinition).Project(projectionString).ToList();
             }
-            
+
+            /*
+             * ConcurrentBagCompleted<BsonDocument> documents2 = new ConcurrentBagCompleted<BsonDocument>();
+            int limit = 1000;
+            long qtd = collection.Find(filter).Count();
+            decimal aa = qtd / limit;
+            int qtdPag = (int)Math.Ceiling(qtd / (double)limit);
+            List<int> paginas = Enumerable.Range(0, qtdPag).ToList();
+
+            Parallel.ForEach(paginas, new ParallelOptions() { MaxDegreeOfParallelism = 10 }, pagina =>
+            {
+                documents2.AddRange(collection.Aggregate().Match(filter).Sort(sortDefinition).Project(projectionString).Skip(pagina * limit).Limit(limit).ToList());
+            });
+            */
+
             JsonWriterSettings jsonWriterSettings = new JsonWriterSettings { OutputMode = JsonOutputMode.RelaxedExtendedJson };
             byte[] dataBytes = Encoding.ASCII.GetBytes(documents.ToJson(jsonWriterSettings));
 
@@ -93,8 +112,8 @@ namespace extractMongoApi.Controllers
 
                 if (parameter == "userTime" || parameter == "robotTime")
                 {
-                    List<int> listDate = value.Split("-").ToList().Select(s => int.Parse(s)).ToList();
-                    //List<int> listDate = dateParams.Select(s => int.Parse(s)).ToList();
+                    List<string> dateParams = value.Split("-").ToList<string>();//.Select(s => int.Parse(s)).ToList();
+                    List<int> listDate = dateParams.Select(s => int.Parse(s)).ToList();
 
                     DateTime startDate = new DateTime(listDate[0], listDate[1], listDate[2]);
                     DateTime endDate = new DateTime(listDate[3], listDate[4], listDate[5]);

@@ -11,6 +11,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Serialization;
+using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace conectarMongo
 {
@@ -19,6 +21,7 @@ namespace conectarMongo
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
         }
 
         public IConfiguration Configuration { get; }
@@ -31,6 +34,7 @@ namespace conectarMongo
             options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore)
                 .AddNewtonsoftJson(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
 
+            services.AddCors();
             services.AddControllers();
         }
 
@@ -42,16 +46,22 @@ namespace conectarMongo
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
-
             app.UseRouting();
 
+            app.UseHttpsRedirection();
+
             app.UseAuthorization();
+
+            app.UseCors(options =>
+              options.WithOrigins("http://localhost:8080")
+              .AllowAnyHeader()
+              .AllowAnyMethod());
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+
         }
     }
 }
